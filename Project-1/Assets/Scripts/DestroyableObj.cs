@@ -7,11 +7,12 @@ public class DestroyableObj : MonoBehaviour
 {
     // variable for object health
     public int health;
+    public int maxHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
