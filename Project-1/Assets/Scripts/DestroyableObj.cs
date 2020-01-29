@@ -12,7 +12,9 @@ public class DestroyableObj : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        int numDestroyed = GameObject.Find("Manager").GetComponent<Manager>().numDestroyed;
+        maxHealth = (numDestroyed * 5) + 15;
+        health = maxHealth;
     }
 
     // Update is called once per frame
