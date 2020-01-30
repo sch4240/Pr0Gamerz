@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DestroyableObj : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class DestroyableObj : MonoBehaviour
     Color startColor;
     [SerializeField]
     Color damagedColor = Color.red;
+    // variable for object health
+    public float health;
+    public float maxHealth;
 
 
     // Start is called before the first frame update
@@ -20,6 +24,9 @@ public class DestroyableObj : MonoBehaviour
         // initialize the private vars
         startColor = GetComponent<Renderer>().material.color;
         currentHealth = startHealth;
+        int numDestroyed = GameObject.Find("Manager").GetComponent<Manager>().numDestroyed;
+        maxHealth = (numDestroyed * 5) + 15;
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -38,6 +45,10 @@ public class DestroyableObj : MonoBehaviour
     // handler for clicking on the object, which will deprecate its health
     void OnMouseDown()
     {
+        health--;
+        GameObject bar = GameObject.Find("Slider");
+        bar.GetComponent<Slider>().value = health / maxHealth;
+        Debug.Log(health);
         currentHealth--;
     }
 }
