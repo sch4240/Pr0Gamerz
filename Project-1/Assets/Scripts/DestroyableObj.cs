@@ -23,7 +23,7 @@ public class DestroyableObj : MonoBehaviour
     {
         // initialize the private vars
         startColor = GetComponent<Renderer>().material.color;
-        currentHealth = startHealth;
+        health = maxHealth;
         int numDestroyed = GameObject.Find("Manager").GetComponent<Manager>().numDestroyed;
         maxHealth = (numDestroyed * 5) + 15;
         health = maxHealth;
@@ -33,13 +33,13 @@ public class DestroyableObj : MonoBehaviour
     void Update()
     {
         // delete this object if its health has reached zero
-       if(currentHealth == 0)
+       if(health == 0)
         {
             Destroy(gameObject);
             return;
         }
        // update the color based on the current health of the obj
-        GetComponent<Renderer>().material.color = Color.Lerp(damagedColor, startColor, (float)currentHealth/startHealth);
+        GetComponent<Renderer>().material.color = Color.Lerp(damagedColor, startColor, (float)health/maxHealth);
     }
 
     // handler for clicking on the object, which will deprecate its health
@@ -49,6 +49,5 @@ public class DestroyableObj : MonoBehaviour
         GameObject bar = GameObject.Find("Slider");
         bar.GetComponent<Slider>().value = health / maxHealth;
         Debug.Log(health);
-        currentHealth--;
     }
 }
