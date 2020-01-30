@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DestroyableObj : MonoBehaviour
 {
     // variable for object health
-    public int health;
-    public int maxHealth;
+    public float health;
+    public float maxHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,8 @@ public class DestroyableObj : MonoBehaviour
     void OnMouseDown()
     {
         health--;
+        GameObject bar = GameObject.Find("Slider");
+        bar.GetComponent<Slider>().value = health / maxHealth;
         Debug.Log(health);
     }
 }

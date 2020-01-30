@@ -30,10 +30,11 @@ public class timerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        maxHP = manager.GetComponent<Manager>().targetObj.GetComponent<DestroyableObj>().maxHealth;
-        currentHP = manager.GetComponent<Manager>().targetObj.GetComponent<DestroyableObj>().health;
+        // maxHP = manager.GetComponent<Manager>().targetObj.GetComponent<DestroyableObj>().maxHealth;
+        // currentHP = manager.GetComponent<Manager>().targetObj.GetComponent<DestroyableObj>().health;
 
-        bar.GetComponent<RectTransform>().localScale = new Vector3(currentHP / maxHP, bar.GetComponent<RectTransform>().localScale.y, bar.GetComponent<RectTransform>().localScale.z);
+        // bar.GetComponent<Slider>().value = currentHP / maxHP;
+        // Debug.Log(currentHP);
 
         time += Time.deltaTime;
         int seconds = (int)time % 60;
