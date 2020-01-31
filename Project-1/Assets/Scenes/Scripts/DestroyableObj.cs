@@ -35,7 +35,9 @@ public class DestroyableObj : MonoBehaviour
         // delete this object if its health has reached zero
        if(health == 0)
         {
+            GameObject.Find("Manager").GetComponent<Manager>().numDestroyed++;
             Destroy(gameObject);
+
             return;
         }
        // update the color based on the current health of the obj
