@@ -11,8 +11,8 @@ public class timerManager : MonoBehaviour
 
     public GameObject timeObj;
 
-    public float time = 0.0f;
-    public float totalTime = 60.0f;
+    public float time = 30.0f;
+    public float totalTime = 30.0f;
 
     public GameObject manager;
     public GameObject target;
@@ -36,10 +36,10 @@ public class timerManager : MonoBehaviour
         // bar.GetComponent<Slider>().value = currentHP / maxHP;
         // Debug.Log(currentHP);
 
-        time += Time.deltaTime;
-        int seconds = (int)time % 60;
-        float timeRemaining = totalTime - seconds;
-        timeObj.GetComponent<Text>().text = timeRemaining.ToString();
+        time = time - (1 * Time.deltaTime);
+        // int seconds = (int)time % 60;
+        // float timeRemaining = totalTime - seconds;
+        timeObj.GetComponent<Slider>().value = time;
 
     }
 }

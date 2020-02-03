@@ -9,6 +9,8 @@ public class Manager : MonoBehaviour
     public int numDestroyed;
     private int dest;
 
+    public GameObject[] objList;
+
     // Start is called before the first frame update
     void Start()
     {
