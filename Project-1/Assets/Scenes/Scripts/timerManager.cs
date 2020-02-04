@@ -14,28 +14,20 @@ public class timerManager : MonoBehaviour
     public float time = 0.0f;
     public float totalTime = 60.0f;
 
-    public GameObject manager;
     public GameObject target;
 
     // Start is called before the first frame update
     void Start()
     {
-        manager = GameObject.Find("Manager");
-
-        maxHP = manager.GetComponent<Manager>().targetObj.GetComponent<DestroyableObj>().maxHealth;
-        currentHP = manager.GetComponent<Manager>().targetObj.GetComponent<DestroyableObj>().health;
+        DestroyableObj destroyObj = GameObject.Find("Manager").GetComponent<Manager>().objects[0].GetComponent<DestroyableObj>();
+        maxHP = destroyObj.maxHealth;
+        currentHP = destroyObj.health;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        // maxHP = manager.GetComponent<Manager>().targetObj.GetComponent<DestroyableObj>().maxHealth;
-        // currentHP = manager.GetComponent<Manager>().targetObj.GetComponent<DestroyableObj>().health;
-
-        // bar.GetComponent<Slider>().value = currentHP / maxHP;
-        // Debug.Log(currentHP);
-
         time += Time.deltaTime;
         int seconds = (int)time % 60;
         float timeRemaining = totalTime - seconds;
