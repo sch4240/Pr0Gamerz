@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class timerManager : MonoBehaviour
 {
@@ -22,8 +23,8 @@ public class timerManager : MonoBehaviour
     {
         manager = GameObject.Find("Manager");
 
-        maxHP = manager.GetComponent<Manager>().targetObj.GetComponent<DestroyableObj>().maxHealth;
-        currentHP = manager.GetComponent<Manager>().targetObj.GetComponent<DestroyableObj>().health;
+/*        maxHP = manager.GetComponent<Manager>().target.GetComponent<DestroyableObj>().maxHealth;
+        currentHP = manager.GetComponent<Manager>().targetObj.GetComponent<DestroyableObj>().health;*/
 
     }
 
@@ -37,6 +38,10 @@ public class timerManager : MonoBehaviour
         // Debug.Log(currentHP);
 
         time = time - (1 * Time.deltaTime);
+        if(time <= 0)
+        {
+            SceneManager.LoadScene("Title");
+        }
         // int seconds = (int)time % 60;
         // float timeRemaining = totalTime - seconds;
         timeObj.GetComponent<Slider>().value = time;
