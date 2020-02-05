@@ -13,9 +13,11 @@ public class DestroyableObj : MonoBehaviour
     Color startColor;
     [SerializeField]
     Color damagedColor = Color.red;
-    // variable for object health
+    // variables for object health
     public float health;
     public float maxHealth;
+    // GO for item system to check when interacting with this for special cases
+    GameObject itemSystem;
 
 
     // Start is called before the first frame update
@@ -27,6 +29,7 @@ public class DestroyableObj : MonoBehaviour
         int numDestroyed = GameObject.Find("Manager").GetComponent<Manager>().numDestroyed;
         maxHealth = (numDestroyed * 5) + 15;
         health = maxHealth;
+        itemSystem = GameObject.Find("ItemSystem");
     }
 
     // Update is called once per frame
@@ -44,7 +47,7 @@ public class DestroyableObj : MonoBehaviour
         GetComponent<Renderer>().material.color = Color.Lerp(damagedColor, startColor, (float)health/maxHealth);
     }
 
-    // handler for clicking on the object, which will deprecate its health
+    // handler for clicking on the object, which will deprecate its health and increase player's money
     void OnMouseDown()
     {
         health--;

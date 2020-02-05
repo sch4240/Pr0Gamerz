@@ -27,8 +27,9 @@ public class Timer : MonoBehaviour
             if (seconds <= 0)
             {
                 timerTick = false;
-                //transition to start screen
-                SceneManager.LoadScene(0);
+                //transition to store screen
+                SceneManager.LoadScene("Shop", LoadSceneMode.Additive);
+                SceneManager.MoveGameObjectToScene(GameObject.Find("ItemSystem"), SceneManager.GetSceneByName("Shop"));
             }
         }
     }
