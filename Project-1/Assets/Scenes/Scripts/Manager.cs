@@ -5,9 +5,10 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
     // gameobject to spawn in
-    public GameObject targetObj;
+    public List<GameObject> objects;
     public int numDestroyed;
-    private int dest;
+    private float spawnTimer;
+    private float spawnTime;
 
     public GameObject[] objList;
 
@@ -15,17 +16,21 @@ public class Manager : MonoBehaviour
     void Start()
     {
         numDestroyed = 0;
-        GameObject target = Instantiate(targetObj, Vector2.zero, Quaternion.identity);
-        dest = 0;
+        spawnTime = 1.0f;
+        spawnTimer = spawnTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(dest < numDestroyed)
+        spawnTimer -= Time.deltaTime;
+        if(spawnTimer <= 0)
         {
-            Instantiate(targetObj, Vector2.zero, Quaternion.identity);
+            int objNum = Random.Range(0, 23);
+            float x = Random.Range(-10.0f, 10.0f);
+            float y = Random.Range(-4.0f, 4.0f);
+            Instantiate(objects[objNum], new Vector2(x,y), Quaternion.identity);
+            spawnTimer = spawnTime;
         }
-        dest = numDestroyed;
     }
 }
