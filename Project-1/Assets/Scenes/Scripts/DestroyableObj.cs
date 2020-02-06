@@ -48,8 +48,8 @@ public class DestroyableObj : MonoBehaviour
     void OnMouseDown()
     {
         health--;
-        GameObject bar = GameObject.Find("Slider");
-        bar.GetComponent<Slider>().value = health / maxHealth;
+        // GameObject bar = GameObject.Find("Slider");
+        // bar.GetComponent<Slider>().value = health / maxHealth;
         Debug.Log(health);
     }
 }
