@@ -9,7 +9,7 @@ public class DestroyableObj : MonoBehaviour
     // variable for object health at start of game as well as private tracking var
     public int startHealth;
     int currentHealth;
-    // color variables to lerp between 
+    // color variables to lerp between
     Color startColor;
     [SerializeField]
     Color damagedColor = Color.red;
@@ -41,6 +41,12 @@ public class DestroyableObj : MonoBehaviour
             GameObject.Find("Manager").GetComponent<Manager>().numDestroyed++;
             Destroy(gameObject);
 
+            if(GameObject.Find("ItemSystem").GetComponent<ItemManager>().extraMoney){
+              GameObject.Find("MoneySystem").GetComponent<MoneyManager>().addMoreMoney();
+            } else {
+              GameObject.Find("MoneySystem").GetComponent<MoneyManager>().addMoney();
+            }
+
             return;
         }
        // update the color based on the current health of the obj
@@ -50,7 +56,11 @@ public class DestroyableObj : MonoBehaviour
     // handler for clicking on the object, which will deprecate its health and increase player's money
     void OnMouseDown()
     {
-        health--;
+        if(GameObject.Find("ItemSystem").GetComponent<ItemManager>().extraDamage){
+          health -= 2;
+        }else{
+          health--;
+        }
         GameObject bar = GameObject.Find("Slider");
         bar.GetComponent<Slider>().value = health / maxHealth;
         Debug.Log(health);

@@ -13,8 +13,12 @@ public class Timer : MonoBehaviour
     void Start()
     {
         timerTick = true;
-        seconds = startTime;
-        GetComponent<Text>().text = "" + seconds;
+        if(GameObject.Find("ItemSystem").GetComponent<ItemManager>().extraTime){
+          seconds = startTime + 10;
+        } else {
+          seconds = startTime;
+        }
+        GameObject.Find("TimerText").GetComponent<Text>().text = "" + seconds;
     }
 
     // Update is called once per frame
@@ -23,13 +27,14 @@ public class Timer : MonoBehaviour
         if (timerTick != false)
         {
             seconds -= Time.deltaTime;
-            GetComponent<Text>().text = ""+seconds;
+            GameObject.Find("TimerText").GetComponent<Text>().text = ""+seconds;
             if (seconds <= 0)
             {
                 timerTick = false;
                 //transition to store screen
-                SceneManager.LoadScene("Shop", LoadSceneMode.Additive);
-                SceneManager.MoveGameObjectToScene(GameObject.Find("ItemSystem"), SceneManager.GetSceneByName("Shop"));
+                //SceneManager.UnloadScene("mainGame");
+                SceneManager.LoadScene("Shop");
+                //SceneManager.MoveGameObjectToScene(GameObject.Find("ItemSystem"), SceneManager.GetSceneByName("Shop"));
             }
         }
     }

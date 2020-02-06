@@ -9,15 +9,27 @@ public class ItemManager : MonoBehaviour
     public bool extraMoney;
     public bool extraTime;
 
+    public void changeExtraDamage(){
+      extraDamage = !extraDamage;
+    }
+
+    public void changeExtraMoney(){
+      extraMoney = !extraMoney;
+    }
+
+    public void changeExtraTime(){
+      extraTime = !extraTime;
+    }
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+      DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

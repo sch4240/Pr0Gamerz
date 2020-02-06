@@ -15,6 +15,6 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Text>().text = "Score: "+manager.GetComponent<Manager>().numDestroyed;
+        GameObject.Find("ScoreText").GetComponent<Text>().text = "Score: "+manager.GetComponent<Manager>().numDestroyed;
     }
 }
