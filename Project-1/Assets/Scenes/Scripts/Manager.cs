@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class Manager : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class Manager : MonoBehaviour
     public int numDestroyed;
     private float spawnTimer;
     private float spawnTime;
+    public int highScore;
 
     // public List<GameObject> gameObjs;
 
@@ -25,6 +28,8 @@ public class Manager : MonoBehaviour
         float y = Random.Range(-4.0f, 4.0f);
         Instantiate(objects[objNum], new Vector2(x, y), Quaternion.identity);
         spawnTimer = spawnTime;
+
+        LoadScore();
     }
 
     // Update is called once per frame
@@ -39,5 +44,38 @@ public class Manager : MonoBehaviour
             Instantiate(objects[objNum], new Vector2(x,y), Quaternion.identity);
             spawnTimer = spawnTime;
         }
+    }
+
+    public void SaveHighScore(int highScore)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+
+        string path = Application.persistentDataPath + "/score.txt";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        int savedHighScore = highScore;
+
+        formatter.Serialize(stream, savedHighScore);
+        stream.Close();
+    }
+
+    public int LoadScore()
+    {
+        string path = Application.persistentDataPath + "/score.txt";
+
+        if(File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            highScore = (int)formatter.Deserialize(stream);
+
+            return highScore;
+        }
+        else
+        {
+            Debug.LogError("Save file not found in " + path);
+        }
+        return 0;
     }
 }

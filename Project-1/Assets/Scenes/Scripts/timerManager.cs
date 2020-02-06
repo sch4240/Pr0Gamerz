@@ -40,6 +40,11 @@ public class timerManager : MonoBehaviour
         time = time - (1 * Time.deltaTime);
         if(time <= 0)
         {
+            if(manager.GetComponent<Manager>().numDestroyed > manager.GetComponent<Manager>().highScore)
+            {
+                manager.GetComponent<Manager>().SaveHighScore(manager.GetComponent<Manager>().numDestroyed);
+                Debug.Log("new high score");
+            }
             SceneManager.LoadScene("Title");
         }
         // int seconds = (int)time % 60;
