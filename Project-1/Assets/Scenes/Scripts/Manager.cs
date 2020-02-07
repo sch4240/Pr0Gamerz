@@ -28,14 +28,12 @@ public class Manager : MonoBehaviour
         float y = Random.Range(-4.0f, 4.0f);
         Instantiate(objects[objNum], new Vector2(x, y), Quaternion.identity);
         spawnTimer = spawnTime;
-
         LoadScore();
     }
 
     // Update is called once per frame
     void Update()
     {
-        SaveHighScore(0);
         spawnTimer -= Time.deltaTime;
         if(spawnTimer <= 0)
         {
@@ -44,9 +42,10 @@ public class Manager : MonoBehaviour
             float y = Random.Range(-4.0f, 4.0f);
             Instantiate(objects[objNum], new Vector2(x,y), Quaternion.identity);
             spawnTimer = spawnTime;
-            
         }
     }
+
+   
 
     public void SaveHighScore(int highScore)
     {
@@ -79,5 +78,13 @@ public class Manager : MonoBehaviour
             Debug.LogError("Save file not found in " + path);
         }
         return 0;
+    }
+
+    public void endGame()
+    {
+        if(numDestroyed > highScore)
+        {
+            SaveHighScore(numDestroyed);
+        }
     }
 }

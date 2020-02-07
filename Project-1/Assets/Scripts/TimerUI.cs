@@ -32,7 +32,9 @@ public class TimerUI : MonoBehaviour
             if (seconds <= 0) // go to shop when game ends
             {
                 timerTick = false;
+                GameObject.Find("Manager").GetComponent<Manager>().endGame();
                 SceneManager.LoadScene("Shop");
+                
             }
         }
     }
