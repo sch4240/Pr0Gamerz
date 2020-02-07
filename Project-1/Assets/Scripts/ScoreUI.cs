@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Score : MonoBehaviour
+public class ScoreUI : MonoBehaviour
 {
     GameObject manager;
     // Start is called before the first frame update
@@ -15,6 +15,6 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Text>().text = "Score: "+manager.GetComponent<Manager>().numDestroyed + "\n" + "High Score: " + manager.GetComponent<Manager>().highScore;
+        GameObject.Find("ScoreText").GetComponent<Text>().text = "Score: "+manager.GetComponent<Manager>().numDestroyed;
     }
 }

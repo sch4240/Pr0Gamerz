@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Timer : MonoBehaviour
+public class TimerUI : MonoBehaviour
 {
     public float seconds;
     public float startTime = 20;
@@ -12,9 +12,14 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // check for extra time upgrade, then set up timer for gameplay and display
         timerTick = true;
-        seconds = startTime;
-        GetComponent<Text>().text = "" + seconds;
+        if(GameObject.Find("ItemSystem").GetComponent<ItemManager>().extraTime){
+          seconds = startTime + 10;
+        } else {
+          seconds = startTime;
+        }
+        GameObject.Find("TimerText").GetComponent<Text>().text = "" + seconds;
     }
 
     // Update is called once per frame
@@ -23,12 +28,11 @@ public class Timer : MonoBehaviour
         if (timerTick != false)
         {
             seconds -= Time.deltaTime;
-            GetComponent<Text>().text = ""+seconds;
-            if (seconds <= 0)
+            gameObject.GetComponent<Text>().text = ""+seconds;
+            if (seconds <= 0) // go to shop when game ends
             {
                 timerTick = false;
-                //transition to start screen
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene("Shop");
             }
         }
     }
