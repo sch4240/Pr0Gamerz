@@ -35,14 +35,16 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SaveHighScore(0);
         spawnTimer -= Time.deltaTime;
         if(spawnTimer <= 0)
         {
-            int objNum = Random.Range(0, 23);
+            int objNum = Random.Range(0, 22);
             float x = Random.Range(-10.0f, 10.0f);
             float y = Random.Range(-4.0f, 4.0f);
             Instantiate(objects[objNum], new Vector2(x,y), Quaternion.identity);
             spawnTimer = spawnTime;
+            
         }
     }
 

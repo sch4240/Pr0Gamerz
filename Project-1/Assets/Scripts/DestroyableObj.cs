@@ -62,8 +62,6 @@ public class DestroyableObj : MonoBehaviour
         }else{
           health--;
         }
-        GameObject bar = GameObject.Find("Slider");
-        bar.GetComponent<Slider>().value = health / maxHealth;
         Debug.Log(health);
     }
 }
