@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Score : MonoBehaviour
+public class ScoreUI : MonoBehaviour
 {
     GameObject manager;
     // Start is called before the first frame update

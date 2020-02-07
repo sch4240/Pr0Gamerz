@@ -36,17 +36,18 @@ public class DestroyableObj : MonoBehaviour
     void Update()
     {
         // delete this object if its health has reached zero
-       if(health == 0)
+       if(health <= 0)
         {
             GameObject.Find("Manager").GetComponent<Manager>().numDestroyed++;
-            Destroy(gameObject);
-
-            if(GameObject.Find("ItemSystem").GetComponent<ItemManager>().extraMoney){
-              GameObject.Find("MoneySystem").GetComponent<MoneyManager>().addMoreMoney();
-            } else {
-              GameObject.Find("MoneySystem").GetComponent<MoneyManager>().addMoney();
+            if (GameObject.Find("ItemSystem").GetComponent<ItemManager>().extraMoney)
+            {
+                GameObject.Find("MoneySystem").GetComponent<MoneyManager>().addMoreMoney();
             }
-
+            else
+            {
+                GameObject.Find("MoneySystem").GetComponent<MoneyManager>().addMoney();
+            }
+            Destroy(gameObject);
             return;
         }
        // update the color based on the current health of the obj

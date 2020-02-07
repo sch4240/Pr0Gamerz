@@ -11,27 +11,14 @@ public class MoneyManager : MonoBehaviour
 
     public void addMoney(){
       money += 5;
-      Debug.Log("Money: " +money);
-      GameObject.Find("MoneyText").GetComponent<Text>().text = "Money: "+money;
     }
 
     public void addMoreMoney(){
       money += 10;
-      Debug.Log("Money: "+money);
-      GameObject.Find("MoneyText").GetComponent<Text>().text = "Money: "+money;
     }
 
     void Awake()
     {
       DontDestroyOnLoad(gameObject);
     }
-
-    // void Start(){
-    //   GameObject.Find("MoneyText").GetComponent<Text>().text = "Money: "+money;
-    // }
-
-    // void Update()
-    // {
-    //     GameObject.Find("MoneyText").GetComponent<Text>().text = "Money: "+money;
-    // }
 }
