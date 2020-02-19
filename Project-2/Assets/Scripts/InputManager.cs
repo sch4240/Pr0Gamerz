@@ -86,7 +86,7 @@ public class InputManager : MonoBehaviour
         // Update is called once per frame
         void Update()
         {
-            Debug.Log(List<Touch>GetTouches());
+            //Debug.Log(List<Touch>GetTouches());
             //if (Input.touchCount > 0)
             //{
             //    Debug.Log("test");
