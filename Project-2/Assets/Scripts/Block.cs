@@ -12,7 +12,9 @@ public class Block : MonoBehaviour
         position = this.transform.position;
         position.y -= Time.deltaTime * 2;
         this.transform.position = position;
-        Debug.Log("Position: " + position.y);
-        Debug.Log("transform: " + this.transform.position.y);
+    }
+
+    public void onBlockDestroyed(){
+        GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
     }
 }

@@ -70,6 +70,8 @@
      <Compile Include="Assets\FingersLite\Script\Gestures\TapGestureRecognizer.cs" />
      <Compile Include="Assets\Scripts\Block.cs" />
      <Compile Include="Assets\Scripts\InputManager.cs" />
+     <Compile Include="Assets\Scripts\ScoreUI.cs" />
+     <Compile Include="Assets\Scripts\ScoringSystem.cs" />
      <Compile Include="Assets\Scripts\SwitchScenes.cs" />
      <None Include="Assets\FingersLite\ChangeLog.txt" />
      <None Include="Assets\FingersLite\Readme.txt" />
