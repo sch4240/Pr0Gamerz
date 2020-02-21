@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6209080510885112682}
   - component: {fileID: 6209080510885112683}
   - component: {fileID: 591031122445050175}
+  - component: {fileID: 8308923423964447277}
+  - component: {fileID: 5758539725948621347}
   m_Layer: 0
   m_Name: RightBlock
   m_TagString: Untagged
@@ -93,3 +95,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca4bd2c7d4ef9543b685fc54cb756db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: right
+--- !u!114 &8308923423964447277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6209080510885112681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a13814810ebc0c4f86d492c800cc798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSwipeLength: 100
+  longPressDuration: 0.5
+--- !u!114 &5758539725948621347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6209080510885112681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1c9465d53368d44a2f8ade920d0309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 591031122445050175}
+  direction: 

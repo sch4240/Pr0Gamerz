@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1503838886162427306}
   - component: {fileID: 1503838886162427307}
   - component: {fileID: 2570911270675399077}
+  - component: {fileID: 4578376944755101549}
+  - component: {fileID: -5804121285317819966}
   m_Layer: 0
   m_Name: DownLeftBlock
   m_TagString: Untagged
@@ -93,3 +95,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca4bd2c7d4ef9543b685fc54cb756db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: downleft
+--- !u!114 &4578376944755101549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503838886162427305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a13814810ebc0c4f86d492c800cc798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSwipeLength: 100
+  longPressDuration: 0.5
+--- !u!114 &-5804121285317819966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503838886162427305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1c9465d53368d44a2f8ade920d0309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 2570911270675399077}
+  direction: 
