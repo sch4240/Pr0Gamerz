@@ -6,6 +6,7 @@ public class Block : MonoBehaviour
 {
     private Vector3 position;
     public string type;
+    ScoringSystem scoreSys;
 
     // Update is called once per frame
     void Update()
@@ -13,6 +14,7 @@ public class Block : MonoBehaviour
         position = this.transform.position;
         position.y -= Time.deltaTime * 2;
         this.transform.position = position;
+        scoreSys = GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>();
         //Debug.Log("Position: " + position.y);
         //Debug.Log("transform: " + this.transform.position.y);
     }
@@ -23,6 +25,7 @@ public class Block : MonoBehaviour
         {
             if (swipe == type)
             {
+                scoreSys.increaseScore();
                 return true;
             }
             else
