@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Block : MonoBehaviour
+public class Block : MonoBehaviour, IPointerExitHandler
 {
     private Vector3 position;
     public string type;
+    public bool swiped = false;
 
     // Update is called once per frame
     void Update()
@@ -33,4 +35,14 @@ public class Block : MonoBehaviour
         return false;
         
     }
+
+    public void SetSwiped()
+    {
+        swiped = true;
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        swiped = true;
+    }
 }
+
