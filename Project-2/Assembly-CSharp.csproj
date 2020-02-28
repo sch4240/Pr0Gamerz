@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\InputController.cs" />
      <Compile Include="Assets\Scripts\InputHelper.cs" />
      <Compile Include="Assets\Scripts\InputManager.cs" />
+     <Compile Include="Assets\Scripts\LifeSystem.cs" />
      <Compile Include="Assets\Scripts\ScoreUI.cs" />
      <Compile Include="Assets\Scripts\ScoringSystem.cs" />
      <Compile Include="Assets\Scripts\SwipeManager.cs" />
