@@ -18,86 +18,87 @@ public class InputController : MonoBehaviour
 
     void HandleSwipe(SwipeAction swipeAction)
     {
-        //Debug.LogFormat("HandleSwipe: {0}", swipeAction);
-        if (swipeAction.direction == SwipeDirection.Up)
+        // if a block has been swiped through, check the direction to see if it needs to be destroyed
+        if (gameObject.GetComponent<Block>().swiped)
         {
-            direction = "up";
-            // move up
-            if (block != null)
-                if (block.checkType(direction))
-                {
-                    Destroy(gameObject);
-                }
-        }
-        else if (swipeAction.direction == SwipeDirection.UpRight)
-        {
-            direction = "upright";
-            // move right
-            if (block != null)
-                if (block.checkType(direction))
-                {
-                    Destroy(gameObject);
-                }
-        }
-        else if (swipeAction.direction == SwipeDirection.Right)
-        {
-            direction = "right";
-            // move down
-            if (block != null)
-                if (block.checkType(direction))
-                {
-                    Destroy(gameObject);
-                }
-        }
-        else if (swipeAction.direction == SwipeDirection.DownRight)
-        {
-            direction = "downright";
-            // move left
-            if (block != null)
-                if (block.checkType(direction))
-                {
-                    Destroy(gameObject);
-                }
-        }
-        else if (swipeAction.direction == SwipeDirection.Down)
-        {
-            direction = "down";
-            // move left
-            if (block != null)
-                if (block.checkType(direction))
-                {
-                    Destroy(gameObject);
-                }
-        }
-        else if (swipeAction.direction == SwipeDirection.DownLeft)
-        {
-            direction = "downleft";
-            // move left
-            if (block != null)
-                if (block.checkType(direction))
-                {
-                    Destroy(gameObject);
-                }
-        }
-        else if (swipeAction.direction == SwipeDirection.Left)
-        {
-            direction = "left";
-            // move left
-            if (block != null)
-                if (block.checkType(direction))
-                {
-                    Destroy(gameObject);
-                }
-        }
-        else if (swipeAction.direction == SwipeDirection.UpRight)
-        {
-            direction = "upright";
-            // move left
-            if (block != null)
-                if (block.checkType(direction))
-                {
-                    Destroy(gameObject);
-                }
+            //Debug.LogFormat("HandleSwipe: {0}", swipeAction);
+            if (swipeAction.direction == SwipeDirection.Up)
+            {
+                direction = "up";
+                if (block != null)
+                    if (block.checkType(direction))
+                    {
+                        Destroy(gameObject);
+
+                    }
+            }
+            else if (swipeAction.direction == SwipeDirection.UpRight)
+            {
+                direction = "upright";
+                if (block != null)
+                    if (block.checkType(direction))
+                    {
+                        Destroy(gameObject);
+                    }
+            }
+            else if (swipeAction.direction == SwipeDirection.Right)
+            {
+                direction = "right";
+                if (block != null)
+                    if (block.checkType(direction))
+                    {
+                        Destroy(gameObject);
+                    }
+            }
+            else if (swipeAction.direction == SwipeDirection.DownRight)
+            {
+                direction = "downright";
+                if (block != null)
+                    if (block.checkType(direction))
+                    {
+                        Destroy(gameObject);
+                    }
+            }
+            else if (swipeAction.direction == SwipeDirection.Down)
+            {
+                direction = "down";
+                if (block != null)
+                    if (block.checkType(direction))
+                    {
+                        Destroy(gameObject);
+                    }
+            }
+            else if (swipeAction.direction == SwipeDirection.DownLeft)
+            {
+                direction = "downleft";
+                if (block != null)
+                    if (block.checkType(direction))
+                    {
+                        Destroy(gameObject);
+                    }
+            }
+            else if (swipeAction.direction == SwipeDirection.Left)
+            {
+                direction = "left";
+                if (block != null)
+                    if (block.checkType(direction))
+                    {
+                        Destroy(gameObject);
+                    }
+            }
+            else if (swipeAction.direction == SwipeDirection.UpLeft)
+            {
+                direction = "upleft";
+                if (block != null)
+                    if (block.checkType(direction))
+                    {
+                        Destroy(gameObject);
+                    }
+            }
+            else
+            {
+                block.GetComponent<Block>().swiped = false;
+            }
         }
     }
 

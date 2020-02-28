@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Block : MonoBehaviour
+public class Block : MonoBehaviour, IPointerExitHandler
 {
     private Vector3 position;
     public string type;
-    ScoringSystem scoreSys;
+    public bool swiped = false;
 
     // Update is called once per frame
     void Update()
@@ -14,7 +15,6 @@ public class Block : MonoBehaviour
         position = this.transform.position;
         position.y -= Time.deltaTime * 2;
         this.transform.position = position;
-        scoreSys = GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>();
         //Debug.Log("Position: " + position.y);
         //Debug.Log("transform: " + this.transform.position.y);
     }
@@ -25,7 +25,6 @@ public class Block : MonoBehaviour
         {
             if (swipe == type)
             {
-                scoreSys.increaseScore();
                 return true;
             }
             else
@@ -36,4 +35,14 @@ public class Block : MonoBehaviour
         return false;
         
     }
+
+    public void SetSwiped()
+    {
+        swiped = true;
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        swiped = true;
+    }
 }
+
