@@ -8,13 +8,12 @@ public class Block : MonoBehaviour, IPointerExitHandler
     private Vector3 position;
     public string type;
     public bool swiped = false;
-    public bool onScreen;
+    public bool passedScreen;
 
     // Start is called before the first frame update
     void Start()
     {
-        //onScreen = GetComponent<MeshRenderer>().isVisible;
-        //Debug.Log("isVisible: " + GetComponent<Renderer>().isVisible);
+        passedScreen = GameObject.Find("Barrier").GetComponent<Collider2D>().IsTouching(gameObject.GetComponent<Collider2D>());
     }
 
     // Update is called once per frame
@@ -23,9 +22,8 @@ public class Block : MonoBehaviour, IPointerExitHandler
         position = this.transform.position;
         position.y -= Time.deltaTime * 2;
         this.transform.position = position;
-        //onScreen = GetComponent<Renderer>().isVisible;
-        //Debug.Log("Position: " + position.y);
-        //Debug.Log("transform: " + this.transform.position.y);
+        passedScreen = GameObject.Find("Barrier").GetComponent<Collider2D>().IsTouching(gameObject.GetComponent<Collider2D>());
+        Debug.Log("passedScreen: " + passedScreen);
     }
 
     public bool checkType(string swipe)
@@ -55,7 +53,7 @@ public class Block : MonoBehaviour, IPointerExitHandler
     }
 
     public void OnScreenExit(){
-      if(!onScreen && this.transform.position.y < 0){
+      if(passedScreen){
         Destroy(this.gameObject);
         GameObject.Find("LifeSystem").GetComponent<LifeSystem>().decreaseLives();
         GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().resetCombo();

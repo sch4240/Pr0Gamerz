@@ -12,11 +12,13 @@ public class ScoringSystem : MonoBehaviour
     void Start()
     {
         score = 0;
-        combo = 0;
+        combo = 1;
+        multiplier = 1;
     }
 
     public void increaseScore(){
       score++;
+      combo++;
       if(combo % 10 == 0){
         multiplier = combo / 10;
       }
