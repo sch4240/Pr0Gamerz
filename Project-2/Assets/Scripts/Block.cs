@@ -13,8 +13,8 @@ public class Block : MonoBehaviour, IPointerExitHandler
     // Start is called before the first frame update
     void Start()
     {
-        onScreen = GetComponent<MeshRenderer>().isVisible;
-        Debug.Log("isVisible: " + GetComponent<Renderer>().isVisible);
+        //onScreen = GetComponent<MeshRenderer>().isVisible;
+        //Debug.Log("isVisible: " + GetComponent<Renderer>().isVisible);
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class Block : MonoBehaviour, IPointerExitHandler
         position = this.transform.position;
         position.y -= Time.deltaTime * 2;
         this.transform.position = position;
-        onScreen = GetComponent<Renderer>().isVisible;
+        //onScreen = GetComponent<Renderer>().isVisible;
         //Debug.Log("Position: " + position.y);
         //Debug.Log("transform: " + this.transform.position.y);
     }
