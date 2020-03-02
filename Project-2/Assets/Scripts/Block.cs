@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Block : MonoBehaviour, IPointerExitHandler
+public class Block : MonoBehaviour
 {
     private Vector3 position;
     public string type;
     public bool swiped = false;
+    public bool inDeadZone = false;
 
     // Update is called once per frame
     void Update()
@@ -38,11 +39,14 @@ public class Block : MonoBehaviour, IPointerExitHandler
 
     public void SetSwiped()
     {
-        swiped = true;
+        if(!inDeadZone)
+            swiped = true;
     }
-    public void OnPointerExit(PointerEventData eventData)
+
+    private void OnCollisionEnter(Collision collision)
     {
-        swiped = true;
+        if (collision.collider.name == "DeadZonePanel")
+            inDeadZone = true;
     }
 }
 
