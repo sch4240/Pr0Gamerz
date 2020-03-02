@@ -23,7 +23,10 @@ public class Block : MonoBehaviour, IPointerExitHandler
         position.y -= Time.deltaTime * 2;
         this.transform.position = position;
         passedScreen = GameObject.Find("Barrier").GetComponent<Collider2D>().IsTouching(gameObject.GetComponent<Collider2D>());
-        Debug.Log("passedScreen: " + passedScreen);
+        if(passedScreen){
+          Debug.Log("passedScreen");
+          onPassedScreen();
+        }
     }
 
     public bool checkType(string swipe)
@@ -52,11 +55,9 @@ public class Block : MonoBehaviour, IPointerExitHandler
         swiped = true;
     }
 
-    public void OnScreenExit(){
-      if(passedScreen){
-        Destroy(this.gameObject);
-        GameObject.Find("LifeSystem").GetComponent<LifeSystem>().decreaseLives();
-        GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().resetCombo();
-      }
+    public void onPassedScreen(){
+      Destroy(this.gameObject);
+      GameObject.Find("LifeSystem").GetComponent<LifeSystem>().decreaseLives();
+      GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().resetCombo();
     }
 }
