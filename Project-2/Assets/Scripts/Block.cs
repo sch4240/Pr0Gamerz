@@ -19,9 +19,9 @@ public class Block : MonoBehaviour, IPointerExitHandler
     // Update is called once per frame
     void Update()
     {
-        position = this.transform.position;
+        position = gameObject.transform.position;
         position.y -= Time.deltaTime * 2;
-        this.transform.position = position;
+        gameObject.transform.position = position;
         passedScreen = GameObject.Find("Barrier").GetComponent<Collider2D>().IsTouching(gameObject.GetComponent<Collider2D>());
         if(passedScreen){
           Debug.Log("passedScreen");
@@ -55,9 +55,10 @@ public class Block : MonoBehaviour, IPointerExitHandler
         swiped = true;
     }
 
-    public void onPassedScreen(){
-      Destroy(this.gameObject);
-      GameObject.Find("LifeSystem").GetComponent<LifeSystem>().decreaseLives();
-      GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().resetCombo();
+    public void onPassedScreen()
+    {
+        GameObject.Find("MainScreenCanvas/LifeSystem").GetComponent<LifeSystem>().decreaseLives();
+        GameObject.Find("MainScreenCanvas/ScoringSystem").GetComponent<ScoringSystem>().resetCombo();
+        Destroy(this.gameObject);
     }
 }
