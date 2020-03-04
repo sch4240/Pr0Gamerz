@@ -57,8 +57,8 @@ public class Block : MonoBehaviour, IPointerExitHandler
 
     public void onPassedScreen()
     {
-        GameObject.Find("MainScreenCanvas/LifeSystem").GetComponent<LifeSystem>().decreaseLives();
-        GameObject.Find("MainScreenCanvas/ScoringSystem").GetComponent<ScoringSystem>().resetCombo();
+        GameObject.Find("LifeSystem").GetComponent<LifeSystem>().decreaseLives();
+        GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().resetCombo();
         Destroy(this.gameObject);
     }
 }
