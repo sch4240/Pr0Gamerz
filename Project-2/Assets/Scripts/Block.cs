@@ -3,21 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Block : MonoBehaviour
+public class Block : MonoBehaviour, IPointerExitHandler
 {
     private Vector3 position;
     public string type;
     public bool swiped = false;
-    public bool inDeadZone = false;
+    public bool passedScreen;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        passedScreen = GameObject.Find("Barrier").GetComponent<Collider2D>().IsTouching(gameObject.GetComponent<Collider2D>());
+    }
 
     // Update is called once per frame
     void Update()
     {
-        position = this.transform.position;
+        position = gameObject.transform.position;
         position.y -= Time.deltaTime * 2;
-        this.transform.position = position;
-        //Debug.Log("Position: " + position.y);
-        //Debug.Log("transform: " + this.transform.position.y);
+        gameObject.transform.position = position;
+        passedScreen = GameObject.Find("Barrier").GetComponent<Collider2D>().IsTouching(gameObject.GetComponent<Collider2D>());
+        if(passedScreen){
+          Debug.Log("passedScreen");
+          onPassedScreen();
+        }
     }
 
     public bool checkType(string swipe)
@@ -34,19 +43,22 @@ public class Block : MonoBehaviour
             }
         }
         return false;
-        
+
     }
 
     public void SetSwiped()
     {
-        if(!inDeadZone)
-            swiped = true;
+        swiped = true;
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        swiped = true;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void onPassedScreen()
     {
-        if (collision.collider.name == "DeadZonePanel")
-            inDeadZone = true;
+        GameObject.Find("LifeSystem").GetComponent<LifeSystem>().decreaseLives();
+        GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().resetCombo();
+        Destroy(this.gameObject);
     }
 }
-

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class InputController : MonoBehaviour
 {
     public Block block;
-    
+
     public string direction;
 
     void Start()
@@ -29,6 +29,7 @@ public class InputController : MonoBehaviour
                     if (block.checkType(direction))
                     {
                         Destroy(gameObject);
+                        GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
 
                     }
             }
@@ -39,6 +40,8 @@ public class InputController : MonoBehaviour
                     if (block.checkType(direction))
                     {
                         Destroy(gameObject);
+                        GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
+
                     }
             }
             else if (swipeAction.direction == SwipeDirection.Right)
@@ -48,6 +51,7 @@ public class InputController : MonoBehaviour
                     if (block.checkType(direction))
                     {
                         Destroy(gameObject);
+                        GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                     }
             }
             else if (swipeAction.direction == SwipeDirection.DownRight)
@@ -57,6 +61,7 @@ public class InputController : MonoBehaviour
                     if (block.checkType(direction))
                     {
                         Destroy(gameObject);
+                        GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                     }
             }
             else if (swipeAction.direction == SwipeDirection.Down)
@@ -66,6 +71,7 @@ public class InputController : MonoBehaviour
                     if (block.checkType(direction))
                     {
                         Destroy(gameObject);
+                        GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                     }
             }
             else if (swipeAction.direction == SwipeDirection.DownLeft)
@@ -75,6 +81,7 @@ public class InputController : MonoBehaviour
                     if (block.checkType(direction))
                     {
                         Destroy(gameObject);
+                        GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                     }
             }
             else if (swipeAction.direction == SwipeDirection.Left)
@@ -84,6 +91,7 @@ public class InputController : MonoBehaviour
                     if (block.checkType(direction))
                     {
                         Destroy(gameObject);
+                        GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                     }
             }
             else if (swipeAction.direction == SwipeDirection.UpLeft)
@@ -93,6 +101,7 @@ public class InputController : MonoBehaviour
                     if (block.checkType(direction))
                     {
                         Destroy(gameObject);
+                        GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                     }
             }
             else

@@ -21,4 +21,24 @@ public class SwitchScenes : MonoBehaviour
     {
         SceneManager.LoadScene("EndScene");
     }
+
+    public void GoToLevelSelectScene()
+    {
+        SceneManager.LoadScene("LevelSelect");
+    }
+
+    public void GoToSong1Scene()
+    {
+        SceneManager.LoadScene("Song1");
+    }
+
+    public void GoToSong2Scene()
+    {
+        SceneManager.LoadScene("Song2");
+    }
+
+    public void GoToSong3Scene()
+    {
+        SceneManager.LoadScene("Song3");
+    }
 }
