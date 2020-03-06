@@ -12,8 +12,8 @@ public class ScoringSystem : MonoBehaviour
     void Start()
     {
         score = 0;
-        combo = 1;
-        multiplier = 1;
+        combo = 0;
+        multiplier = 0;
     }
 
     public void increaseScore(){
@@ -21,12 +21,22 @@ public class ScoringSystem : MonoBehaviour
       combo++;
       if(combo % 10 == 0){
         multiplier = combo / 10;
+        if (combo != 0)
+        {
+           score += multiplier * 10;
+        }
       }
-      score *= multiplier;
+     
+      
     }
 
     public int getScore(){
       return score;
+    }
+
+    public int getCombo()
+    {
+        return combo;
     }
 
     public void resetCombo(){

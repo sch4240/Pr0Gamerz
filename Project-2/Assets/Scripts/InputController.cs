@@ -14,6 +14,7 @@ public class InputController : MonoBehaviour
         SwipeManager swipeManager = gameObject.GetComponent<SwipeManager>();
         swipeManager.onSwipe += HandleSwipe;
         swipeManager.onLongPress += HandleLongPress;
+        block = gameObject.GetComponent<Block>();
     }
 
     void HandleSwipe(SwipeAction swipeAction)
@@ -30,9 +31,8 @@ public class InputController : MonoBehaviour
                     if (block != null)
                         if (block.checkType(direction))
                         {
-                            GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                             Destroy(gameObject);
-
+                            GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                         }
                 }
                 else if (swipeAction.direction == SwipeDirection.UpRight)
@@ -41,8 +41,8 @@ public class InputController : MonoBehaviour
                     if (block != null)
                         if (block.checkType(direction))
                         {
-                            GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                             Destroy(gameObject);
+                            GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();    
                         }
                 }
                 else if (swipeAction.direction == SwipeDirection.Right)

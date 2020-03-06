@@ -18,10 +18,10 @@ public class Block : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         position = gameObject.transform.position;
-        position.y -= Time.deltaTime * 100;
+        position.y -= Time.deltaTime * 200;
         gameObject.transform.position = position;
         passedScreen = GameObject.Find("Barrier").GetComponent<Collider2D>().IsTouching(gameObject.GetComponent<Collider2D>());
         inSweetSpot = GameObject.FindGameObjectWithTag("SweetSpot").GetComponent<Collider2D>().IsTouching(gameObject.GetComponent<Collider2D>());
@@ -33,8 +33,6 @@ public class Block : MonoBehaviour
 
     public bool checkType(string swipe)
     {
-        if(position.y < 5)
-        {
             if (swipe == type)
             {
                 return true;
@@ -43,9 +41,6 @@ public class Block : MonoBehaviour
             {
                 return false;
             }
-        }
-        return false;
-
     }
 
     public void SetSwiped()
