@@ -30,8 +30,8 @@ public class InputController : MonoBehaviour
                     if (block != null)
                         if (block.checkType(direction))
                         {
-                            Destroy(gameObject);
                             GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
+                            Destroy(gameObject);
 
                         }
                 }
@@ -41,9 +41,8 @@ public class InputController : MonoBehaviour
                     if (block != null)
                         if (block.checkType(direction))
                         {
-                            Destroy(gameObject);
                             GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
-
+                            Destroy(gameObject);
                         }
                 }
                 else if (swipeAction.direction == SwipeDirection.Right)
