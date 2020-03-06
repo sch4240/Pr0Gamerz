@@ -892,6 +892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSwipeLength: 100
   longPressDuration: 0.5
+  dot: {fileID: 6515088675927658786, guid: 91b5c40527e71024e93a5ea338135178, type: 3}
 --- !u!4 &1052259820
 Transform:
   m_ObjectHideFlags: 0
