@@ -60,37 +60,41 @@ public class SwipeManager : MonoBehaviour
         var touches = InputHelper.GetTouches();
         if (touches.Count > 0)
         {
-            Touch t = touches[0];
-
-            if (t.phase == TouchPhase.Began)
+            // this SHOULD handle multi-touch by looping through each touch detected
+            for (int i = 0; i < touches.Count; i++)
             {
-                ResetCurrentSwipeAction(t);
-            }
+                Touch t = touches[i];
 
-            if (t.phase == TouchPhase.Moved || t.phase == TouchPhase.Stationary)
-            {
-                UpdateCurrentSwipeAction(t);
-                if (!currentSwipeAction.longPress && currentSwipeAction.duration > longPressDuration && currentSwipeAction.longestDistance < minSwipeLength)
+                if (t.phase == TouchPhase.Began)
                 {
-                    currentSwipeAction.direction = SwipeDirection.None; // Invalidate current swipe action
-                    currentSwipeAction.longPress = true;
-                    onLongPress?.Invoke(currentSwipeAction); // Fire event
-                    return;
-                }
-            }
-
-            if (t.phase == TouchPhase.Ended)
-            {
-                UpdateCurrentSwipeAction(t);
-
-                // Make sure it was a legit swipe, not a tap, or long press
-                if (currentSwipeAction.distance < minSwipeLength || currentSwipeAction.longPress) // Didnt swipe enough or this is a long press
-                {
-                    currentSwipeAction.direction = SwipeDirection.None; // Invalidate current swipe action
-                    return;
+                    ResetCurrentSwipeAction(t);
                 }
 
-                onSwipe?.Invoke(currentSwipeAction); // Fire event
+                if (t.phase == TouchPhase.Moved || t.phase == TouchPhase.Stationary)
+                {
+                    UpdateCurrentSwipeAction(t);
+                    if (!currentSwipeAction.longPress && currentSwipeAction.duration > longPressDuration && currentSwipeAction.longestDistance < minSwipeLength)
+                    {
+                        currentSwipeAction.direction = SwipeDirection.None; // Invalidate current swipe action
+                        currentSwipeAction.longPress = true;
+                        onLongPress?.Invoke(currentSwipeAction); // Fire event
+                        return;
+                    }
+                }
+
+                if (t.phase == TouchPhase.Ended)
+                {
+                    UpdateCurrentSwipeAction(t);
+
+                    // Make sure it was a legit swipe, not a tap, or long press
+                    if (currentSwipeAction.distance < minSwipeLength || currentSwipeAction.longPress) // Didnt swipe enough or this is a long press
+                    {
+                        currentSwipeAction.direction = SwipeDirection.None; // Invalidate current swipe action
+                        return;
+                    }
+
+                    onSwipe?.Invoke(currentSwipeAction); // Fire event
+                }
             }
         }
     }

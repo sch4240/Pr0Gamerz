@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8174465922927449203}
   - component: {fileID: 8174465922927449202}
   - component: {fileID: 8174465922927449205}
-  - component: {fileID: 8174465922927449204}
+  - component: {fileID: -4339963371796316433}
   - component: {fileID: 8174465922927449207}
   - component: {fileID: 8174465922927449206}
   - component: {fileID: 8174465922927449161}
@@ -92,7 +92,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: downleft
   swiped: 0
---- !u!114 &8174465922927449204
+  inSweetSpot: 0
+  passedScreen: 0
+--- !u!114 &-4339963371796316433
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +146,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3.2}
+  m_Size: {x: 100, y: 140}
   m_EdgeRadius: 0
 --- !u!114 &8174465922927449161
 MonoBehaviour:
