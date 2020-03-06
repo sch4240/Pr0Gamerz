@@ -873,7 +873,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Song2
+  m_Text: Coming Soon!
 --- !u!222 &1039372952
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1092,7 +1092,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Song3
+  m_Text: Coming Soon!
 --- !u!222 &1546667438
 CanvasRenderer:
   m_ObjectHideFlags: 0

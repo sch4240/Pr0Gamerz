@@ -24,7 +24,7 @@ public class Block : MonoBehaviour
         position.y -= Time.deltaTime * 2;
         gameObject.transform.position = position;
         passedScreen = GameObject.Find("Barrier").GetComponent<Collider2D>().IsTouching(gameObject.GetComponent<Collider2D>());
-        inSweetSpot = GameObject.Find("SweetSpotPanel").GetComponent<Collider2D>().IsTouching(gameObject.GetComponent<Collider2D>());
+        inSweetSpot = GameObject.FindGameObjectWithTag("SweetSpot").GetComponent<Collider2D>().IsTouching(gameObject.GetComponent<Collider2D>());
         if (passedScreen){
           Debug.Log("passedScreen");
           onPassedScreen();
