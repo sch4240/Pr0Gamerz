@@ -21,7 +21,7 @@ public class Block : MonoBehaviour
     void FixedUpdate()
     {
         position = gameObject.transform.position;
-        position.y -= Time.deltaTime * 200;
+        position.y -= Time.deltaTime * 2;
         gameObject.transform.position = position;
         passedScreen = GameObject.Find("Barrier").GetComponent<Collider2D>().IsTouching(gameObject.GetComponent<Collider2D>());
         inSweetSpot = GameObject.FindGameObjectWithTag("SweetSpot").GetComponent<Collider2D>().IsTouching(gameObject.GetComponent<Collider2D>());

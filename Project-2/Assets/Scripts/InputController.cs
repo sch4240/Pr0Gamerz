@@ -22,8 +22,8 @@ public class InputController : MonoBehaviour
         // if a block has been swiped through and is in the sweetspot, check the direction to see if it needs to be destroyed
         if (gameObject.GetComponent<Block>().swiped)
         {
-            // if its in the sweetspot, proceed
-            if (gameObject.GetComponent<Block>().inSweetSpot)
+            // if its in the sweetspot & has been flipped to the correct orientation, proceed
+            if (gameObject.GetComponent<Block>().inSweetSpot && FindObjectOfType<FlipManager>().flipStatusMatching)
             {
                 if (swipeAction.direction == SwipeDirection.Up)
                 {
@@ -110,7 +110,7 @@ public class InputController : MonoBehaviour
                     block.GetComponent<Block>().swiped = false;
                 }
             }
-            else // handle the case of the block being swiped outside the sweetspot
+            else // handle the case of the block being swiped outside the sweetspot or the phone being in an incorrect orientation
             {
                 GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().resetCombo();
                 Destroy(gameObject);

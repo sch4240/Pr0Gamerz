@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Dot.cs" />
      <Compile Include="Assets\FingersLite\Demo\DemoAsteroidScript.cs" />
      <Compile Include="Assets\FingersLite\Demo\DemoScript.cs" />
      <Compile Include="Assets\FingersLite\Script\FingersScript.cs" />
@@ -68,11 +69,17 @@
      <Compile Include="Assets\FingersLite\Script\Gestures\ScaleGestureRecognizer.cs" />
      <Compile Include="Assets\FingersLite\Script\Gestures\SwipeGestureRecognizer.cs" />
      <Compile Include="Assets\FingersLite\Script\Gestures\TapGestureRecognizer.cs" />
+     <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Block.cs" />
+     <Compile Include="Assets\Scripts\ComboUI.cs" />
+     <Compile Include="Assets\Scripts\FlipManager.cs" />
+     <Compile Include="Assets\Scripts\GyroControl.cs" />
      <Compile Include="Assets\Scripts\InputController.cs" />
      <Compile Include="Assets\Scripts\InputHelper.cs" />
+     <Compile Include="Assets\Scripts\InputManager.cs" />
      <Compile Include="Assets\Scripts\LifeSystem.cs" />
      <Compile Include="Assets\Scripts\LifeUI.cs" />
+     <Compile Include="Assets\Scripts\OrientationUI.cs" />
      <Compile Include="Assets\Scripts\ScoreUI.cs" />
      <Compile Include="Assets\Scripts\ScoringSystem.cs" />
      <Compile Include="Assets\Scripts\SwipeManager.cs" />
