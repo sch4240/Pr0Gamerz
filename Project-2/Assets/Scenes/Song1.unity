@@ -893,6 +893,7 @@ MonoBehaviour:
   - {fileID: 5620687785708237708, guid: 99b8bbe5141a2e6408cdd54548a333e9, type: 3}
   - {fileID: 6583107489043747205, guid: 4df7791908f240f4391071055094574d, type: 3}
   - {fileID: 9105524952929376445, guid: cc9d6a5c1910c23428d820a5d231bcbc, type: 3}
+  bpm: 100
 --- !u!4 &1340318471
 Transform:
   m_ObjectHideFlags: 0
@@ -1174,7 +1175,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 211387796b2d0b649a9d5bc57a760e80, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c1a61cd569c5d184788e0fc91cbc57a3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

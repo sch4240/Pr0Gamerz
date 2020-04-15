@@ -16,17 +16,29 @@ EditorBuildSettings:
     guid: 00a853210a6ac2947974c3ef7cca3bf9
   - enabled: 1
     path: Assets/Scenes/LevelSelect.unity
-    guid: de2d56d89c27f9249b731f9fdfc0c3a9
+    guid: ce458ef210ed25e42ad6b817203f1b7e
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Song1.unity
-    guid: de4063097500fc740b85cc44eddec216
+    guid: a6e9226bc015793489584421ab046113
   - enabled: 1
     path: Assets/Scenes/Song2.unity
-    guid: 4d3edc9c1df15fe43a866dd255007360
+    guid: 04ccb6c97e67f5c4ea49c0f338bd413d
   - enabled: 1
     path: Assets/Scenes/Song3.unity
-    guid: fdb9f3236d2e2b740aac1916ee70c3a3
-  - enabled: 1
+    guid: 1cbb17f474ed00545a297bde04853ecd
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/MainScene.unity
     guid: db43156f6cd77764cb49881bae5b918c
   - enabled: 1

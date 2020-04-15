@@ -271,7 +271,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Song1
+  m_Text: Under Pressure (Easy)
 --- !u!222 &263046920
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -873,7 +873,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Coming Soon!
+  m_Text: Meglovania (Medium)
 --- !u!222 &1039372952
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1092,7 +1092,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Coming Soon!
+  m_Text: Running in the 90s (Hard)
 --- !u!222 &1546667438
 CanvasRenderer:
   m_ObjectHideFlags: 0
