@@ -11,6 +11,6 @@ public class ScoreUI : MonoBehaviour
     void Update()
     {
         scoreToDisplay = GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().getScore();
-        gameObject.GetComponent<Text>().text = "Score: " + scoreToDisplay;
+        gameObject.GetComponent<Text>().text = "SCORE: " + scoreToDisplay;
     }
 }

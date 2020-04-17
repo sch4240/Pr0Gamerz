@@ -9,7 +9,12 @@ public class AudioManager : MonoBehaviour
 
     float beatTimer = 2.0f;
 
-    float beatDiff = 0.0f;
+    public float bpm;
+
+    void Start()
+    {
+        beatTimer = (240/bpm);
+    }
 
     // Update is called once per frame
     void Update()
@@ -22,9 +27,7 @@ public class AudioManager : MonoBehaviour
             Vector2 blockPos = new Vector2(Random.Range(-215, 213), 354);
             Block block = Instantiate(blocks[index], blockPos, Quaternion.identity);
             block.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
-            beatTimer = 2.0f;
-            beatDiff += 0.01f;
-            beatTimer -= beatDiff;
+            beatTimer = (240/bpm);
         }
     }
 }

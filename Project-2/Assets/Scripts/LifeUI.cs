@@ -11,6 +11,6 @@ public class LifeUI : MonoBehaviour
   void Update()
   {
       livesToDisplay = GameObject.Find("LifeSystem").GetComponent<LifeSystem>().getLives();
-      gameObject.GetComponent<Text>().text = "Lives: " + livesToDisplay;
+      gameObject.GetComponent<Text>().text = "LIVES: " + livesToDisplay;
   }
 }
