@@ -155,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 6.6499634}
+  m_AnchoredPosition: {x: 0, y: 6.6499023}
   m_SizeDelta: {x: 43.9, y: 13.3}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &13283424
@@ -635,6 +635,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1052259820}
   - component: {fileID: 1052259819}
+  - component: {fileID: 1052259821}
+  - component: {fileID: 1052259822}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -669,6 +671,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1052259821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052259818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b846d3fa14b6147a13a57e71a19789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenFlips: 10
+  totalFlipTime: 10
+  shouldBeFlipped: 0
+  flipStatusMatching: 1
+--- !u!114 &1052259822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052259818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2b804902bcd5a48a5170645bb9dfa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gyroEnabled: 0
+  currRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1164048664
 GameObject:
   m_ObjectHideFlags: 0
