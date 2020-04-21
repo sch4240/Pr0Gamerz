@@ -11,6 +11,6 @@ public class ComboUI : MonoBehaviour
     void Update()
     {
         comboToDisplay = GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().getCombo();
-        gameObject.GetComponent<Text>().text = "Combo: " + comboToDisplay;
+        gameObject.GetComponent<Text>().text = "COMBO: " + comboToDisplay;
     }
 }
