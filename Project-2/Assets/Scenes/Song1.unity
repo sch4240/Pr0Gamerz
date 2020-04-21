@@ -893,6 +893,7 @@ MonoBehaviour:
   - {fileID: 5620687785708237708, guid: 99b8bbe5141a2e6408cdd54548a333e9, type: 3}
   - {fileID: 6583107489043747205, guid: 4df7791908f240f4391071055094574d, type: 3}
   - {fileID: 9105524952929376445, guid: cc9d6a5c1910c23428d820a5d231bcbc, type: 3}
+  song: {fileID: 1633938566}
   bpm: 100
 --- !u!4 &1340318471
 Transform:
