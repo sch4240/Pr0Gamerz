@@ -71,6 +71,7 @@
      <Compile Include="Assets\FingersLite\Script\Gestures\TapGestureRecognizer.cs" />
      <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Block.cs" />
+     <Compile Include="Assets\Scripts\BlockShardBreakaway.cs" />
      <Compile Include="Assets\Scripts\ComboUI.cs" />
      <Compile Include="Assets\Scripts\FlipManager.cs" />
      <Compile Include="Assets\Scripts\GyroControl.cs" />

@@ -7,6 +7,10 @@ public class InputController : MonoBehaviour
 {
     public Block block;
 
+    // for prefabs of the split halves of the block this is attached to
+    public BlockShardBreakaway blockHalf1; // for left/top pieces
+    public BlockShardBreakaway blockHalf2; // for right/bottom pieces
+
     public string direction;
 
     void Start()
@@ -31,6 +35,8 @@ public class InputController : MonoBehaviour
                     if (block != null)
                         if (block.checkType(direction))
                         {
+                            Instantiate(blockHalf1, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1, 0), Quaternion.identity);
+                            Instantiate(blockHalf2, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 1, 0), Quaternion.identity);
                             Destroy(gameObject);
                             GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                         }
@@ -41,6 +47,8 @@ public class InputController : MonoBehaviour
                     if (block != null)
                         if (block.checkType(direction))
                         {
+                            Instantiate(blockHalf1, new Vector3(gameObject.transform.position.x - 1, gameObject.transform.position.y + 1, 0), Quaternion.identity);
+                            Instantiate(blockHalf2, new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y - 1, 0), Quaternion.identity);
                             Destroy(gameObject);
                             GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();    
                         }
@@ -51,6 +59,8 @@ public class InputController : MonoBehaviour
                     if (block != null)
                         if (block.checkType(direction))
                         {
+                            Instantiate(blockHalf1, new Vector3(gameObject.transform.position.x - 1, gameObject.transform.position.y, 0), Quaternion.identity);
+                            Instantiate(blockHalf2, new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y, 0), Quaternion.identity);
                             Destroy(gameObject);
                             GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                         }
@@ -61,6 +71,8 @@ public class InputController : MonoBehaviour
                     if (block != null)
                         if (block.checkType(direction))
                         {
+                            Instantiate(blockHalf1, new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y + 1, 0), Quaternion.identity);
+                            Instantiate(blockHalf2, new Vector3(gameObject.transform.position.x - 1, gameObject.transform.position.y - 1, 0), Quaternion.identity);
                             Destroy(gameObject);
                             GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                         }
@@ -71,6 +83,8 @@ public class InputController : MonoBehaviour
                     if (block != null)
                         if (block.checkType(direction))
                         {
+                            Instantiate(blockHalf1, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 1, 0), Quaternion.identity);
+                            Instantiate(blockHalf2, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 1, 0), Quaternion.identity);
                             Destroy(gameObject);
                             GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                         }
@@ -81,6 +95,8 @@ public class InputController : MonoBehaviour
                     if (block != null)
                         if (block.checkType(direction))
                         {
+                            Instantiate(blockHalf1, new Vector3(gameObject.transform.position.x - 1, gameObject.transform.position.y + 1, 0), Quaternion.identity);
+                            Instantiate(blockHalf2, new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y - 1, 0), Quaternion.identity);
                             Destroy(gameObject);
                             GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                         }
@@ -91,6 +107,8 @@ public class InputController : MonoBehaviour
                     if (block != null)
                         if (block.checkType(direction))
                         {
+                            Instantiate(blockHalf1, new Vector3(gameObject.transform.position.x - 1, gameObject.transform.position.y, 0), Quaternion.identity);
+                            Instantiate(blockHalf2, new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y, 0), Quaternion.identity);
                             Destroy(gameObject);
                             GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                         }
@@ -101,6 +119,8 @@ public class InputController : MonoBehaviour
                     if (block != null)
                         if (block.checkType(direction))
                         {
+                            Instantiate(blockHalf1, new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y + 1, 0), Quaternion.identity);
+                            Instantiate(blockHalf2, new Vector3(gameObject.transform.position.x - 1, gameObject.transform.position.y - 1, 0), Quaternion.identity);
                             Destroy(gameObject);
                             GameObject.Find("ScoringSystem").GetComponent<ScoringSystem>().increaseScore();
                         }
