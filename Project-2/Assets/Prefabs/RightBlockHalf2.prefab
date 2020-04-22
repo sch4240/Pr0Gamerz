@@ -10,8 +10,14 @@ PrefabInstance:
     - target: {fileID: 3313505292145874896, guid: 22b7084329b3ca242bcbe3d50a707679,
         type: 3}
       propertyPath: m_Name
-      value: BlockShard
+      value: RightBlockHalf2
       objectReference: {fileID: 0}
+    - target: {fileID: 3313505292145874898, guid: 22b7084329b3ca242bcbe3d50a707679,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7864733da2f1d0245a4d78b7903b0055,
+        type: 3}
     - target: {fileID: 3313505292145874899, guid: 22b7084329b3ca242bcbe3d50a707679,
         type: 3}
       propertyPath: m_LocalPosition.x

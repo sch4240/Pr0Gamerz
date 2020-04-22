@@ -7,6 +7,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6791221235209620688, guid: ad4465444077a5e458e63b2ae405a30e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a2bd300f5dbbb7a498e447a8c3b84f01,
+        type: 3}
     - target: {fileID: 6791221235209620689, guid: ad4465444077a5e458e63b2ae405a30e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -65,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 6791221235209620690, guid: ad4465444077a5e458e63b2ae405a30e,
         type: 3}
       propertyPath: m_Name
-      value: BlockShard
+      value: LeftBlockHalf2
       objectReference: {fileID: 0}
     - target: {fileID: 6791221235209620690, guid: ad4465444077a5e458e63b2ae405a30e,
         type: 3}

@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 8705015324437024501, guid: 6f077f72af1bac94cb040bcb06a469ee,
         type: 3}
       propertyPath: m_Name
-      value: BlockShard
+      value: UpLeftBlockHalf1
       objectReference: {fileID: 0}
     - target: {fileID: 8705015324437024501, guid: 6f077f72af1bac94cb040bcb06a469ee,
         type: 3}
@@ -72,5 +72,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8705015324437024503, guid: 6f077f72af1bac94cb040bcb06a469ee,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1440b6889b134e044a3b434f850602f1,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f077f72af1bac94cb040bcb06a469ee, type: 3}

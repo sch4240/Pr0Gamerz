@@ -62,10 +62,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9115221927097348053, guid: e15c26ee2e8275a498f61bc3790b7cbe,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d2c77d6a1e83cd648b7839caa002b9ee,
+        type: 3}
     - target: {fileID: 9115221927097348055, guid: e15c26ee2e8275a498f61bc3790b7cbe,
         type: 3}
       propertyPath: m_Name
-      value: BlockShard
+      value: RightBlockHalf1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e15c26ee2e8275a498f61bc3790b7cbe, type: 3}

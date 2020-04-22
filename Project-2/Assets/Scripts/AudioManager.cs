@@ -45,6 +45,8 @@ public class AudioManager : MonoBehaviour
 
     public void GoToWinScene()
     {
+        // save the name of this scene to player preferences so the scene switcher script can refer to it when the start over button is hit
+        PlayerPrefs.SetString("previousScene", SceneManager.GetActiveScene().name);
         SceneManager.LoadScene("WinScene");
     }
 }
