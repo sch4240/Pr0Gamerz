@@ -6,6 +6,14 @@ TagManager:
   tags:
   - Canvas
   - SweetSpot
+  - LeftShard
+  - TopLeftShard
+  - TopShard
+  - TopRightShard
+  - RightShard
+  - BottomRightShard
+  - BottomShard
+  - BottomLeftShard
   layers:
   - Default
   - TransparentFX

@@ -712,7 +712,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 989781428}
-        m_MethodName: GoToMainScene
+        m_MethodName: GoToPreviousScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

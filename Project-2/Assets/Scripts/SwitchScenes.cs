@@ -17,6 +17,12 @@ public class SwitchScenes : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
+    public void GoToPreviousScene()
+    {
+        // MAKE SURE THIS ONLY GETS CALLED AFTER THIS STRING HAS BEEN SET (currently gets set in LifeSystem & AudioManager)
+        SceneManager.LoadScene(PlayerPrefs.GetString("previousScene"));
+    }
+
     public void GoToEndScene()
     {
         SceneManager.LoadScene("EndScene");

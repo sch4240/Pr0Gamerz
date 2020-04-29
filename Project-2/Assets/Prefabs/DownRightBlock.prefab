@@ -121,6 +121,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 8293495206593925077}
+  blockHalf1: {fileID: 5023084436096525506, guid: bc0be1d6c5de31b499da034f42629a0b,
+    type: 3}
+  blockHalf2: {fileID: 5118295567727405864, guid: 427c80874ad62b14897a321a408a16db,
+    type: 3}
   direction: 
 --- !u!61 &8293495206593925080
 BoxCollider2D:
