@@ -13,10 +13,10 @@ public class FlipManager : MonoBehaviour
     public float totalFlipTime = 10f;
     float timeLeft;
     public bool shouldBeFlipped = false;
-    bool isFlipped = false;
+    public bool isFlipped = false;
     public bool flipStatusMatching = true;
     // var that should track a GyroContoller in the same scene as this script
-    GyroControl gc;
+    public GyroControl gc;
 
     // Start is called before the first frame update
     void Start()
