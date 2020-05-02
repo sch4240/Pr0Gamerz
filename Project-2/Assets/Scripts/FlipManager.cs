@@ -18,6 +18,14 @@ public class FlipManager : MonoBehaviour
     // var that should track a GyroContoller in the same scene as this script
     public GyroControl gc;
 
+    public float xOnLoad;
+    public float yOnLoad;
+    public float zOnLoad;
+
+    public float zeroedX;
+    public float zeroedY;
+    public float zeroedZ;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +33,12 @@ public class FlipManager : MonoBehaviour
         timeLeft = timeBetweenFlips;
         // find a GyroControl to attach to this script
         gc = FindObjectOfType<GyroControl>();
+
+        if(gc.gyroEnabled){
+          xOnLoad = gc.currRot.eulerAngles.x;
+          yOnLoad = gc.currRot.eulerAngles.y;
+          zOnLoad = gc.currRot.eulerAngles.z;
+        }
     }
 
     // Update is called once per frame
@@ -61,6 +75,10 @@ public class FlipManager : MonoBehaviour
                 flipStatusMatching = true;
             else
                 flipStatusMatching = false;
+
+            zeroedX = xOnLoad - gc.currRot.eulerAngles.x;
+            zeroedY = yOnLoad - gc.currRot.eulerAngles.y;
+            zeroedZ = zOnLoad - gc.currRot.eulerAngles.z;
         }
     }
 }

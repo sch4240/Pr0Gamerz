@@ -81,6 +81,8 @@
      <Compile Include="Assets\Scripts\LifeSystem.cs" />
      <Compile Include="Assets\Scripts\LifeUI.cs" />
      <Compile Include="Assets\Scripts\OrientationDebugUI.cs" />
+     <Compile Include="Assets\Scripts\OrientationDebugUIy.cs" />
+     <Compile Include="Assets\Scripts\OrientationDebugUIz.cs" />
      <Compile Include="Assets\Scripts\OrientationUI.cs" />
      <Compile Include="Assets\Scripts\ScoreUI.cs" />
      <Compile Include="Assets\Scripts\ScoringSystem.cs" />

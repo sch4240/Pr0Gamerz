@@ -19,6 +19,6 @@ public class OrientationDebugUI : MonoBehaviour
       // else
       //     gameObject.GetComponent<Text>().text = "Standard";
 
-      gameObject.GetComponent<Text>().text = "" + FindObjectOfType<FlipManager>().gc.currRot.eulerAngles.z;
+      gameObject.GetComponent<Text>().text = "" + FindObjectOfType<FlipManager>().zeroedX;
     }
 }
