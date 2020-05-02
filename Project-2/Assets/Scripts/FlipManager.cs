@@ -40,8 +40,9 @@ public class FlipManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if there's a GyroControl with an active gyro, proceed
-        if (gc.gyroEnabled)
+        // if there's a GyroControl with an active gyro, proceed (gc spits out bad values for unknown reasons, so this is broken right now)
+        // if (gc.gyroEnabled)
+        if(false)
         {
             if (frameOne)
             {
