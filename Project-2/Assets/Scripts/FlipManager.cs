@@ -26,6 +26,8 @@ public class FlipManager : MonoBehaviour
     public float zeroedY;
     public float zeroedZ;
 
+    bool frameOne = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,12 +35,6 @@ public class FlipManager : MonoBehaviour
         timeLeft = timeBetweenFlips;
         // find a GyroControl to attach to this script
         gc = FindObjectOfType<GyroControl>();
-
-        if(gc.gyroEnabled){
-          xOnLoad = gc.currRot.eulerAngles.x;
-          yOnLoad = gc.currRot.eulerAngles.y;
-          zOnLoad = gc.currRot.eulerAngles.z;
-        }
     }
 
     // Update is called once per frame
@@ -47,6 +43,14 @@ public class FlipManager : MonoBehaviour
         // if there's a GyroControl with an active gyro, proceed
         if (gc.gyroEnabled)
         {
+            if (frameOne)
+            {
+                xOnLoad = gc.currRot.eulerAngles.x;
+                yOnLoad = gc.currRot.eulerAngles.y;
+                zOnLoad = gc.currRot.eulerAngles.z;
+                frameOne = false;
+            }
+
             // decrement the time left
             timeLeft -= Time.deltaTime;
             // when it hits 0, flip the flipped status
